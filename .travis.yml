@@ -9,7 +9,7 @@ script:
     - docker run -e CI=true react-test npm run test
 
 after_success:
-    - docker build -t naveenauta/multi-client:client-latest ./client
+    - docker build -t naveenauta/multi-client ./client
     - docker build -t naveenauta/multi-nginx:nginx-latest ./nginx
     - docker build -t naveenauta/multi-server:server-latest ./server
     - docker build -t naveenauta/multi-worker:worker-latest ./worker
@@ -18,6 +18,7 @@ after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     #take these images and push them to docker hub
+    - docker tag naveenauta/multi-client:latest naveenauta/multi-client:client-latest
     - docker push naveenauta/mutli-client:client-latest
     - docker push naveenauta/mutli-nginx:nginx-latest
     - docker push naveenauta/mutli-server:server-latest
