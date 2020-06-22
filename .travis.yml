@@ -18,9 +18,9 @@ after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     #take these images and push them to docker hub
-    - docker push naveenauta/mutli-client
-    - docker push naveenauta/mutli-nginx
-    - docker push naveenauta/mutli-server
-    - docker push naveenauta/mutli-worker    
+    - docker push naveenauta/mutli-client:client-latest
+    - docker push naveenauta/mutli-nginx:nginx-latest
+    - docker push naveenauta/mutli-server:server-latest
+    - docker push naveenauta/mutli-worker:worker-latest   
     #push images to docker hub
 
