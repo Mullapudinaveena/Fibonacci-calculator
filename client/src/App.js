@@ -10,14 +10,11 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <header className="App-header">
-            <h1 className="App-title">Fib Calculator</h1>
-            <Link to="/">Home</Link>
-            <Link to="/otherpage">Other Page</Link>
+          <header>
+            <h1 className="App-title">Fibonacci Calculator</h1>
           </header>
           <div>
-            <Route exact path="/" component={Fib} colSpan={2}/>
-            <Route path="/otherpage" component={OtherPage}  colSpan={2}/>
+            <Route exact path="/" component={Fib}/> 
           </div>
         </div>
       </Router>
